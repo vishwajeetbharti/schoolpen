@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:schoolpen/signUpScreens/bloc_view/bloc_View.dart';
+import 'package:schoolpen/signUpScreens/main_bloc_view/bloc_View.dart';
 
 main() {
   runApp(const MyApp());

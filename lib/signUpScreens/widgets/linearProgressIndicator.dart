@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../constants/string.dart';
+
 class CameraProgressIndicator extends StatefulWidget {
   const CameraProgressIndicator(
       {super.key, required this.value, required this.h});
@@ -14,6 +16,7 @@ class CameraProgressIndicatorState extends State<CameraProgressIndicator>
     with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _sizeAnimation;
+  ValueNotifier<int> suggestion = ValueNotifier(0);
 
   @override
   void initState() {
@@ -42,8 +45,27 @@ class CameraProgressIndicatorState extends State<CameraProgressIndicator>
       animation: _sizeAnimation,
       builder: (context, child) {
         int value = ((_sizeAnimation.value * 100) / widget.value).round();
+        suggestion.value = value;
         return Column(
           children: [
+            Text(
+              (value < 30)
+                  ? Strings.lookLeft
+                  : (value < 60)
+                      ? Strings.lookRight
+                      : Strings.lookFront,
+              style: const TextStyle(fontSize: 30),
+            ),
+            SizedBox(
+              height: widget.h * 0.03,
+            ),
+            const Text(
+              Strings.suggestion,
+              style: TextStyle(color: Colors.grey, fontSize: 15),
+            ),
+            SizedBox(
+              height: widget.h * 0.025,
+            ),
             Text(
               '$value%',
               style: const TextStyle(color: Colors.black87, fontSize: 15),

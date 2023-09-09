@@ -11,36 +11,11 @@ class TeacherScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Stack(
-          children: [
-            SizedBox(
-              width: w,
-              height: h * 0.35,
-              child: Image.asset(
-                'assets/Ellipse 417.png',
-                fit: BoxFit.fill,
-              ),
-            ),
-            SizedBox(
-              width: w,
-              height: h * 0.29,
-              child: Image.asset(
-                'assets/Background1.png',
-                fit: BoxFit.fitWidth,
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(left: w * 0.25, top: h * 0.2),
-              child: Image.asset(
-                'assets/thinkingIllustration.png',
-                scale: 1,
-                fit: BoxFit.fill,
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(
-          height: 20,
+        SizedBox(
+          child: Image.asset(
+            'assets/thinking.png',
+            fit: BoxFit.fill,
+          ),
         ),
         SizedBox(
           width: w * 0.9,
@@ -54,7 +29,7 @@ class TeacherScreen extends StatelessWidget {
         ),
         Container(
           width: w * 0.9,
-          height: h * 0.25,
+          height: (h < 800) ? (h * 0.22) : (h * 0.25),
           decoration: const BoxDecoration(
               gradient: LinearGradient(
                 begin: Alignment.centerLeft,
@@ -77,19 +52,16 @@ class TeacherScreen extends StatelessWidget {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const SizedBox(
-                    height: 30,
-                  ),
                   Text(
                     Strings.teacher,
                     style: TextStyle(color: Colors.white, fontSize: w * 0.07),
                   ),
                   const SizedBox(
-                    height: 10,
+                    height: 5,
                   ),
                   SizedBox(
-                    height: h * 0.15,
-                    width: w * 0.5,
+                    height: h * 0.13,
+                    width: w * 0.45,
                     child: Text(
                       Strings.teacherQuotes,
                       style: TextStyle(color: Colors.white, fontSize: w * 0.04),
@@ -110,7 +82,7 @@ class TeacherScreen extends StatelessWidget {
           buttonName: Strings.submitButton,
         ),
         const SizedBox(
-          height: 5,
+          height: 15,
         )
       ],
     );

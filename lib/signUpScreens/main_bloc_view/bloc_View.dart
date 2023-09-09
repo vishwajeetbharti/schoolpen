@@ -7,8 +7,7 @@ import 'package:schoolpen/signUpScreens/fillName.dart';
 import 'package:schoolpen/signUpScreens/profileType.dart';
 import 'package:schoolpen/signUpScreens/teacherScreen.dart';
 
-import '../../bloc/bloc.dart';
-import '../../constants/string.dart';
+import '../../blocRepo/bloc/bloc.dart';
 import '../fingerPrint.dart';
 import '../parentScreen.dart';
 import '../region.dart';
@@ -72,7 +71,7 @@ class _BlocViewState extends State<BlocView> {
     double width = MediaQuery.of(context).size.width;
     double height = MediaQuery.of(context).size.height;
     return Scaffold(
-      resizeToAvoidBottomInset: false,
+      backgroundColor: Colors.white,
       body: BlocProvider(
         create: (_) => signUpBloc,
         child: BlocBuilder<SignUpBloc, SignUpStates>(
@@ -116,6 +115,7 @@ class _BlocViewState extends State<BlocView> {
                 h: height,
                 w: width,
                 controller: _regionController,
+                name: state.name,
               );
             } else if (state is ChooseProfileState) {
 //----------after passing from (Region Screen) it will came (Profile Type selection)-----------
@@ -149,6 +149,10 @@ class _BlocViewState extends State<BlocView> {
             _controller,
           ),
         ),
+        Padding(
+          padding: EdgeInsets.all(w * 0.25),
+          child: Image.asset('assets/Group 4111.png'),
+        ),
         Column(
           mainAxisAlignment: MainAxisAlignment.end,
           children: [
@@ -166,20 +170,6 @@ class _BlocViewState extends State<BlocView> {
                 children: [
                   SizedBox(
                     height: h * 0.05,
-                  ),
-                  const Text(
-                    Strings.lookLeft,
-                    style: TextStyle(fontSize: 30),
-                  ),
-                  SizedBox(
-                    height: h * 0.03,
-                  ),
-                  const Text(
-                    Strings.suggestion,
-                    style: TextStyle(color: Colors.grey, fontSize: 15),
-                  ),
-                  SizedBox(
-                    height: h * 0.025,
                   ),
                   CameraProgressIndicator(h: h, value: w),
                 ],

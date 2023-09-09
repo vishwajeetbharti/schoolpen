@@ -16,7 +16,7 @@ class SignUpBloc extends Bloc<SignUpEvents, SignUpStates> {
     });
     on<GetNameEvent>((event, emit) => emit(GetNameState()));
     on<GetRegionEvent>((event, emit) {
-      emit(GetRegionState());
+      emit(GetRegionState(name: event.userName));
     });
     on<ChooseProfileEvent>((event, emit) => emit(ChooseProfileState()));
     on<TeacherEvent>((event, emit) => emit(TeacherState()));

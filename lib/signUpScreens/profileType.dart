@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:schoolpen/signUpScreens/widgets/button.dart';
 
-import '../bloc/bloc.dart';
+import '../blocRepo/bloc/bloc.dart';
 import '../constants/string.dart';
 
 class ProfileSelection extends StatelessWidget {
@@ -12,36 +12,11 @@ class ProfileSelection extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Stack(
-          children: [
-            SizedBox(
-              width: w,
-              height: h * 0.35,
-              child: Image.asset(
-                'assets/Ellipse 417.png',
-                fit: BoxFit.fill,
-              ),
-            ),
-            SizedBox(
-              width: w,
-              height: h * 0.29,
-              child: Image.asset(
-                'assets/Background1.png',
-                fit: BoxFit.fitWidth,
-              ),
-            ),
-            Container(
-              margin: EdgeInsets.only(left: w * 0.25, top: h * 0.2),
-              child: Image.asset(
-                'assets/thinkingIllustration.png',
-                scale: 1,
-                fit: BoxFit.fill,
-              ),
-            ),
-          ],
-        ),
-        const SizedBox(
-          height: 50,
+        SizedBox(
+          child: Image.asset(
+            'assets/thinking.png',
+            fit: BoxFit.fill,
+          ),
         ),
         SizedBox(
           width: w * 0.9,
@@ -51,7 +26,7 @@ class ProfileSelection extends StatelessWidget {
           ),
         ),
         const SizedBox(
-          height: 50,
+          height: 20,
         ),
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -107,7 +82,7 @@ class ProfileSelection extends StatelessWidget {
           buttonName: 'Submit',
         ),
         const SizedBox(
-          height: 5,
+          height: 15,
         )
       ],
     );

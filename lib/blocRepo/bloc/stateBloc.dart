@@ -19,7 +19,8 @@ class GetNameState extends SignUpStates {
 }
 
 class GetRegionState extends SignUpStates {
-  GetRegionState();
+  String name;
+  GetRegionState({required this.name});
 }
 
 class ChooseProfileState extends SignUpStates {

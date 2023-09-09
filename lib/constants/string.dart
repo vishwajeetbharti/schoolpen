@@ -3,8 +3,10 @@
 class Strings {
   static const String askName = 'How we should call you?';
   static const String askUserType = 'How you gonna use this app?';
-  static const String askRegion = 'Welcome Rahul,\nWhat is your region?';
+  static const String askRegion = 'What is your region?';
   static const String lookLeft = 'Look Left';
+  static const String lookRight = 'Look Right';
+  static const String lookFront = 'Look Front';
   static const String suggestion = 'Keep your face in frame';
   static const String hintText = 'Enter your name';
   static const String fingerPrint = 'Touch the Sensor';
