@@ -51,7 +51,7 @@ class FillName extends StatelessWidget {
                 ),
               )),
           SizedBox(
-            height: (h < 800) ? (h * 0.18) : (h * 0.22),
+            height: (h < 800) ? (h * 0.16) : (h * 0.22),
           ),
           Button(
             width: w * 0.9,
